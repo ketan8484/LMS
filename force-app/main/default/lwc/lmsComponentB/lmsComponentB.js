@@ -5,16 +5,21 @@ export default class LmsComponentB extends LightningElement {
     receiveMessage
     @wire(MessageContext)
     context
+    subscription
 
     connectedCallback(){
         this.subscribeMessage()
     }
     subscribeMessage(){
-         subscribe(this.context,SAMPLEMC,(message)=>{this.handleMessage(message)}, {scope:APPLICATION_SCOPE})
+         this.subscription = subscribe(this.context,SAMPLEMC,(message)=>{this.handleMessage(message)}, {scope:APPLICATION_SCOPE})
     }
 
     handleMessage(message){
         this.receiveMessage = message.lmsData.value? message.lmsData.value : 'No Message pulished'
     }
-   
+
+    unsubscribeMessage(){
+        unsubscribe(this.subscription) 
+        this.subscription  = NULL
+    }
 }
