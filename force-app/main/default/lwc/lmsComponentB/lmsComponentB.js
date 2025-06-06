@@ -22,4 +22,8 @@ export default class LmsComponentB extends LightningElement {
         unsubscribe(this.subscription) 
         this.subscription  = NULL
     }
+
+    resubscribe(){
+        this.subscribeMessage();
+    }
 }
