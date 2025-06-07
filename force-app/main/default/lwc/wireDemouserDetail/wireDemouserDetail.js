@@ -8,6 +8,8 @@ export default class WireDemouserDetail extends LightningElement {
     userId = id
     userDetail
     //@wire(getRecord, {recordId:'005dM000007rj6DQAQ' , fields:['user.Name', 'user.Email']})
+    //reactive means once the data available update it
+    //to make property reactive in wire adapter - we need to usee $ before property in single quote.
     @wire(getRecord, {recordId:'$userId' ,fields})
     userDetailHandler({data,error}){
         if(data){
