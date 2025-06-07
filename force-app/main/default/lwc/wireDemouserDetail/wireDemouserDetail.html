@@ -2,6 +2,7 @@
     <lightning-card title="User details wire as a function">
         <div class="slds-var-p-around_medium">
             <template if:true={userDetail}>
+                <div>{userId}</div>
                 <div> Email - {userDetail.Email.value}</div>
                 <div> Name - {userDetail.Name.Value}</div>
             </template>
@@ -10,6 +11,7 @@
      <lightning-card title="User details wire as a Property">
         <div class="slds-var-p-around_medium">
             <template if:true={userDetailProperty.data}>
+                <div>{userId}</div>
                 <div> Email - {userDetailProperty.data.fields.Email.value}</div>
                 <div> Name - {userDetailProperty.data.fields.Name.value}</div>
             </template>

@@ -8,7 +8,7 @@ export default class WireDemouserDetail extends LightningElement {
     userId = id
     userDetail
     //@wire(getRecord, {recordId:'005dM000007rj6DQAQ' , fields:['user.Name', 'user.Email']})
-    @wire(getRecord, {recordId:'005dM000007rj6DQAQ' ,fields})
+    @wire(getRecord, {recordId:'$userId' ,fields})
     userDetailHandler({data,error}){
         if(data){
             this.userDetail = data.fields
@@ -18,6 +18,6 @@ export default class WireDemouserDetail extends LightningElement {
         }
     }
 
-    @wire(getRecord, {recordId:'005dM000007rj6DQAQ' , fields})
+    @wire(getRecord, {recordId:'$userId' , fields})
     userDetailProperty
 }
