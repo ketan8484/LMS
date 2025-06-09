@@ -11,7 +11,7 @@ export default class FilteredAccounttypeWiredDemo extends LightningElement {
             {label:"Customer - Channel", value:"Customer - Channel"}
         ]
     }
-//Ketan kulkarni
+//Ketan kulkarni 23
     handlechange(event){
         this.selectedtype = event.target.value
     }
